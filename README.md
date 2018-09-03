@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+========================================================================================================
+Attibute v/s Structural directives
+
+Attribute Directive(built-in):
+-> they looks like a normal HTML Attribute (possibly 
+with databinding or event binding)
+-> Only effect/change the element they are added to.
+This directive wont effect the DOM Structure
+(element properties or css get changed)
+ex- ngStyle, ngClass
+
+Structural Directive (built-in):
+-> they looks like  a normal HTML Attibute but having a leading * (star)
+-> Affects the whole structure of the DOM tree (elements get added or removed)
+ex- *ngFor, *ngIf
+
+Note : We cannot More than 1 structural directive on html element
+
+for ex -
+<li *ngFor="let number of numbers" *ngIf="number%2 == 0"> 
+{{number}}
+</li>
+
+This will give Runtime Exception more than one structural directive 
+cannot be assigned to single html element
+
+Whereas, We can apply two or more Attribute Directive on a single
+HTML Element
+
+-------------------------------------------------------------------------------------------------------
