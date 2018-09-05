@@ -10,12 +10,21 @@
             {{ odd }}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!--  <div *ngIf="!onlyOdd">
           <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
             *ngFor="let even of evenNumbers">
             {{ even }}
           </li>
-        </div>
+        </div> -->
+        <!-- using logic of IF statement on DOM, but without using Structural directive *ngIf -->
+        <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
+              *ngFor="let even of evenNumbers">
+              {{ even }}
+            </li>
+          </div>
+        </ng-template>
       </ul>
       <p appBasicHighlight_customeDirective> Style me with custome directive !!</p>
       <!-- 
@@ -28,6 +37,30 @@
       <div appHoverDivHighlighter_customeDirective>
         THis is a div Element
       </div>
+      <div appHoverDivHighlighter_customeDirective [defaultColor]="'transparent'" [appHighlighterAliasName]="'yellow'">
+        This is a Second div Element
+      </div>
+      <!-- shortuct of above code (removing the square barcket and single quotes of the string) -->
+      <div appHoverDivHighlighter_customeDirective defaultColor="lightpink" appHighlighterAliasName="lightyellow">
+        This is a Second div Element
+      </div>
+
+
+      <!--
+         Using of Custome Structural directive instead of using builtin structural directive 
+        myStructuralProperty-> is our own cutome structural directive which we have build
+      -->
+      <div *ngIf="isMarried">
+        Usha is married
+      </div>
+      <div *myStructuralProperty="isMarried">
+        Shailesh is married
+      </div>
+      <div *myStructuralProperty="!isMarried">
+        Tejas is not married
+      </div>
+
+
     </div>
   </div>
 </div>

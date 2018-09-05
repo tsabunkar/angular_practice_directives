@@ -56,3 +56,20 @@ Whereas, We can apply two or more Attribute Directive on a single
 HTML Element
 
 -------------------------------------------------------------------------------------------------------
+*ngIf -> * indicates the angular it is structural directive, but why does angular should know it is
+Structural directive bcoz - behind the sences there is no concept of * 
+We only have property binding, event bindind, two-way binding and String interpolation.
+behind the sences angular need to converte this * into ng-template and property binding
+
+<div *ngIf="!onlyOdd">
+</div>
+
+is internally transformed to ->
+
+ <ng-template [ngIf]="!onlyOdd">
+  <div>
+  </div>
+ </ng-template>
+
+
+ -------------------------------------------------------------------------------------------------------

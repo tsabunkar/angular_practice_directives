@@ -6,6 +6,7 @@ import { MyBackgorundHighlightDirective } from './mycustome-directives/basic-hig
 import { BetterHighlighterDirective } from './mycustome-directives/better-highlighter/better-highlighter.directive';
 import { HoverHighlighterDirective } from './mycustome-directives/hover-highlighter/hover-higlighter.directive';
 import { DivHighlighterDirective } from './mycustome-directives/div-highlighter/div-highlighter.directive';
+import { CustomeStructuralDirective } from './mycustome-directives/custom-structural-directive/custom-structral.directive';
 
 @NgModule({
   declarations: [ //all the custome Component, Directive and Pipe will be declared in this declarations array 
@@ -13,7 +14,8 @@ import { DivHighlighterDirective } from './mycustome-directives/div-highlighter/
     MyBackgorundHighlightDirective,
     BetterHighlighterDirective,
     HoverHighlighterDirective,
-    DivHighlighterDirective
+    DivHighlighterDirective,
+    CustomeStructuralDirective
   ],
   imports: [
     BrowserModule
