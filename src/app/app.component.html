@@ -60,6 +60,13 @@
         Tejas is not married
       </div>
 
+      <!-- Using builtin Structural directive -> *ngSwitch() -->
+     <div [ngSwitch]="myValue">
+       <div *ngSwitchCase="5">Value is 5</div>
+       <div *ngSwitchCase="10">Value is 10</div>
+       <div *ngSwitchCase="15">Value is 15</div>
+       <div *ngSwitchDefault>Default value is nothing</div>
+     </div>
 
     </div>
   </div>
